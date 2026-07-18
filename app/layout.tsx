@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Leather Care Co. – Premium Leather Restoration",
+  title: "The Leather Care Co.",
   description:
     "Expert restoration for luxury leather bags, shoes, wallets, and jackets. Serving India with over 20 years of craftsmanship.",
   openGraph: {
