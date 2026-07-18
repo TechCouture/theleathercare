@@ -6,11 +6,12 @@ export default function Home() {
       {/* Header with Logo */}
       <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
         <Image
-          src="/images/logo.png"
+          src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375294/logo_kqemjd.png"
           alt="The Leather Care Co."
           width={180}
           height={50}
           priority
+          className="h-auto w-auto"
         />
         <a
           href="https://wa.me/918076959966?text=Hello%2C%20I%27d%20like%20a%20repair%20quote"
@@ -51,11 +52,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work samples */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-neutral-200">
-        <div className="relative h-64 md:h-96 overflow-hidden">
+      {/* Work samples – with generous spacing */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-6 pb-4 md:pb-6">
+        <div className="relative h-64 md:h-96 overflow-hidden rounded-lg">
           <Image
-            src="/images/hero.jpg"
+            src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375082/1_cb2str.png"
             alt="Luxury leather restoration example"
             fill
             className="object-cover hover:scale-105 transition duration-700"
@@ -63,18 +64,18 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative h-64 md:h-96 overflow-hidden">
+        <div className="relative h-64 md:h-96 overflow-hidden rounded-lg">
           <Image
-            src="/images/care-kit.jpg"
+            src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375293/care-kit_z5senn.jpg"
             alt="Leather care products and tools"
             fill
             className="object-cover hover:scale-105 transition duration-700"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
-        <div className="relative h-64 md:h-96 overflow-hidden">
+        <div className="relative h-64 md:h-96 overflow-hidden rounded-lg">
           <Image
-            src="/images/ysl-bag.jpg"
+            src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375294/ysl-bag_wftmil.jpg"
             alt="Restored YSL bag"
             fill
             className="object-cover hover:scale-105 transition duration-700"
@@ -163,7 +164,7 @@ export default function Home() {
       <footer className="bg-neutral-50 py-12 px-4 border-t border-neutral-100">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-sm text-neutral-500 gap-4">
           <div className="flex gap-6">
-            <a href="tel:+918076959966" className="hover:text-amber-800">📞 +91 7303750839</a>
+            <a href="tel:+918076959966" className="hover:text-amber-800">📞 +91 8076959966</a>
             <a href="mailto:info@theleathercareco.com" className="hover:text-amber-800">📧 info@theleathercareco.com</a>
           </div>
           <div className="flex gap-6">
