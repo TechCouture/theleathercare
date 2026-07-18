@@ -13,7 +13,7 @@ export default function Home() {
           priority
         />
         <a
-          href="https://wa.me/918061959966?text=Hello%2C%20I%27d%20like%20a%20repair%20quote"
+          href="https://wa.me/918076959966?text=Hello%2C%20I%27d%20like%20a%20repair%20quote"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm underline underline-offset-4 hover:text-amber-800"
@@ -35,7 +35,7 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="https://wa.me/918061959966?text=I%27d%20like%20a%20free%20quote"
+            href="https://wa.me/918076959966?text=I%27d%20like%20a%20free%20quote"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-amber-800 text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-amber-900 transition"
@@ -43,7 +43,7 @@ export default function Home() {
             Get Free Quote
           </a>
           <a
-            href="tel:+918061959966"
+            href="tel:+918076959966"
             className="inline-block border border-neutral-300 px-8 py-4 text-sm uppercase tracking-widest hover:bg-neutral-50 transition"
           >
             Call Us
@@ -163,7 +163,7 @@ export default function Home() {
       <footer className="bg-neutral-50 py-12 px-4 border-t border-neutral-100">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-sm text-neutral-500 gap-4">
           <div className="flex gap-6">
-            <a href="tel:+918061959966" className="hover:text-amber-800">📞 +91 7303750839</a>
+            <a href="tel:+918076959966" className="hover:text-amber-800">📞 +91 7303750839</a>
             <a href="mailto:info@theleathercareco.com" className="hover:text-amber-800">📧 info@theleathercareco.com</a>
           </div>
           <div className="flex gap-6">
@@ -178,7 +178,7 @@ export default function Home() {
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/918061959966?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services"
+        href="https://wa.me/918076959966?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition z-50"
