@@ -52,34 +52,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work samples – with generous spacing */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-6 pb-4 md:pb-6">
-        <div className="relative h-64 md:h-96 overflow-hidden rounded-lg">
-          <Image
-            src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375082/1_cb2str.png"
-            alt="Luxury leather restoration example"
-            fill
-            className="object-cover hover:scale-105 transition duration-700"
-            sizes="(max-width: 768px) 100vw, 33vw"
-            priority
-          />
-        </div>
-        <div className="relative h-64 md:h-96 overflow-hidden rounded-lg">
+      {/* Work samples – only two images, no hero, with generous spacing and taller desktop height */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-4 md:px-6 pb-4 md:pb-6">
+        <div className="relative h-72 md:h-[32rem] overflow-hidden rounded-lg">
           <Image
             src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375293/care-kit_z5senn.jpg"
             alt="Leather care products and tools"
             fill
             className="object-cover hover:scale-105 transition duration-700"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <div className="relative h-64 md:h-96 overflow-hidden rounded-lg">
+        <div className="relative h-72 md:h-[32rem] overflow-hidden rounded-lg">
           <Image
             src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784375294/ysl-bag_wftmil.jpg"
             alt="Restored YSL bag"
             fill
             className="object-cover hover:scale-105 transition duration-700"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       </section>
