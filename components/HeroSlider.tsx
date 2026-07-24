@@ -19,7 +19,7 @@ const slides: Slide[] = [
       "https://res.cloudinary.com/auvmsf0q/image/upload/v1784885168/1_1_ptz7hy.jpg",
     mobile:
       "https://res.cloudinary.com/auvmsf0q/image/upload/v1784885166/1_2_o1jqgg.jpg",
-    alt: "Luxury Louis Vuitton Collection — Black LV and Red LV handbags",
+    alt: "Luxury Louis Vuitton Collection – Black LV and Red LV handbags",
     cta: {
       primary: { text: "Book Free Assessment", href: "https://wa.me/918076959966?text=I'd%20like%20a%20free%20assessment" },
       secondary: { text: "WhatsApp Us", href: "https://wa.me/918076959966?text=Hello%2C%20I'd%20like%20to%20know%20more" },
@@ -40,7 +40,7 @@ const slides: Slide[] = [
       "https://res.cloudinary.com/auvmsf0q/image/upload/v1784885169/3_1_ca5q4f.jpg",
     mobile:
       "https://res.cloudinary.com/auvmsf0q/image/upload/v1784885167/3_2_jgmi7g.jpg",
-    alt: "Hermès Kelly — Expert leather care for luxury treasures",
+    alt: "Hermès Kelly – Expert leather care for luxury treasures",
     cta: {
       primary: { text: "Explore Services", href: "#services" },
     },
@@ -50,7 +50,7 @@ const slides: Slide[] = [
       "https://res.cloudinary.com/auvmsf0q/image/upload/v1784885168/4_1_quzd9o.jpg",
     mobile:
       "https://res.cloudinary.com/auvmsf0q/image/upload/v1784885167/4_2_oophxb.jpg",
-    alt: "Birkin with model — The Leather Care Co. brand story",
+    alt: "Birkin with model – The Leather Care Co. brand story",
     cta: {
       primary: { text: "Discover Our Story", href: "#about" },
     },
@@ -68,7 +68,7 @@ const slides: Slide[] = [
   },
 ];
 
-const SLIDE_DURATION = 7000; // 7 seconds
+const SLIDE_DURATION = 7000;
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
@@ -79,7 +79,6 @@ export default function HeroSlider() {
     setProgress(0);
   }, []);
 
-  // Auto-advance
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -88,9 +87,8 @@ export default function HeroSlider() {
     return () => clearInterval(interval);
   }, []);
 
-  // Progress tick
   useEffect(() => {
-    const tick = 50; // update every 50ms
+    const tick = 50;
     const step = (tick / SLIDE_DURATION) * 100;
     const timer = setInterval(() => {
       setProgress((prev) => {
@@ -103,7 +101,6 @@ export default function HeroSlider() {
 
   return (
     <section className="relative h-[90vh] md:h-screen w-full overflow-hidden bg-[#181818]">
-      {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -111,18 +108,13 @@ export default function HeroSlider() {
             index === current ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {/* Slow zoom animation on active slide */}
-          <div
-            className={`absolute inset-0 ${
-              index === current ? "animate-hero-zoom" : ""
-            }`}
-          >
-            {/* Mobile image */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Mobile image – full width, object‑contain so nothing is cut off */}
             <Image
               src={slide.mobile}
               alt={slide.alt}
               fill
-              className="object-cover md:hidden"
+              className="object-contain md:hidden"
               sizes="100vw"
               priority={index === 0}
             />
@@ -131,16 +123,13 @@ export default function HeroSlider() {
               src={slide.desktop}
               alt={slide.alt}
               fill
-              className="object-cover hidden md:block"
+              className="object-contain hidden md:block"
               sizes="100vw"
               priority={index === 0}
             />
           </div>
 
-          {/* Subtle overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-
-          {/* CTA Buttons */}
+          {/* CTA Buttons – same as before, positioned above the image bottom */}
           {index === current && (
             <div className="absolute bottom-12 md:bottom-20 left-0 right-0 z-20 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 animate-[fadeInUp_1s_ease-out_0.3s_both]">
               <a
@@ -162,7 +151,7 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* Progress indicators */}
+      {/* Progress indicators – unchanged */}
       <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
         {slides.map((_, index) => (
           <button
@@ -173,9 +162,7 @@ export default function HeroSlider() {
           >
             <span
               className="absolute inset-0 bg-white transition-all duration-75 ease-linear"
-              style={{
-                width: index === current ? `${progress}%` : "0%",
-              }}
+              style={{ width: index === current ? `${progress}%` : "0%" }}
             />
           </button>
         ))}
