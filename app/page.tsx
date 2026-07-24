@@ -109,44 +109,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== BEFORE & AFTER GALLERY ====== */}
-      <section id="before-after" className="py-24 md:py-32 px-4 bg-[#FCFAF8]">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#B38A4A] mb-4 font-[family-name:var(--font-inter)]">
-            The Transformation
-          </p>
-          <h2 className="text-3xl md:text-5xl font-light tracking-[0.03em] mb-16 font-[family-name:var(--font-cormorant)]">
-            Before & After
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative h-80 md:h-[28rem] overflow-hidden group bg-[#181818]">
-              <Image
-                src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784885169/3_1_ca5q4f.jpg"
-                alt="Before restoration"
-                fill
-                className="object-contain transition-transform duration-1000 group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <span className="absolute top-4 left-4 bg-[#181818] text-white text-xs px-3 py-1.5 uppercase tracking-wider font-[family-name:var(--font-inter)]">
-                Before
-              </span>
-            </div>
-            <div className="relative h-80 md:h-[28rem] overflow-hidden group bg-[#181818]">
-              <Image
-                src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784885168/1_1_ptz7hy.jpg"
-                alt="After restoration"
-                fill
-                className="object-contain transition-transform duration-1000 group-hover:scale-[1.02]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <span className="absolute top-4 left-4 bg-[#B38A4A] text-white text-xs px-3 py-1.5 uppercase tracking-wider font-[family-name:var(--font-inter)]">
-                After
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ====== LEATHER CARE KIT ====== */}
       <section id="care-kit" className="py-24 md:py-32 px-4">
         <div className="max-w-7xl mx-auto">
