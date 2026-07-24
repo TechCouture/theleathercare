@@ -119,24 +119,24 @@ export default function Home() {
             Before & After
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative h-80 md:h-[28rem] overflow-hidden group">
+            <div className="relative h-80 md:h-[28rem] overflow-hidden group bg-[#181818]">
               <Image
                 src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784885169/3_1_ca5q4f.jpg"
                 alt="Before restoration"
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                className="object-contain transition-transform duration-1000 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <span className="absolute top-4 left-4 bg-[#181818] text-white text-xs px-3 py-1.5 uppercase tracking-wider font-[family-name:var(--font-inter)]">
                 Before
               </span>
             </div>
-            <div className="relative h-80 md:h-[28rem] overflow-hidden group">
+            <div className="relative h-80 md:h-[28rem] overflow-hidden group bg-[#181818]">
               <Image
                 src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784885168/1_1_ptz7hy.jpg"
                 alt="After restoration"
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                className="object-contain transition-transform duration-1000 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <span className="absolute top-4 left-4 bg-[#B38A4A] text-white text-xs px-3 py-1.5 uppercase tracking-wider font-[family-name:var(--font-inter)]">
@@ -151,12 +151,12 @@ export default function Home() {
       <section id="care-kit" className="py-24 md:py-32 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
-            <div className="relative h-80 md:h-[32rem] w-full md:w-1/2 overflow-hidden">
+            <div className="relative h-80 md:h-[32rem] w-full md:w-1/2 overflow-hidden bg-[#181818]">
               <Image
                 src="https://res.cloudinary.com/auvmsf0q/image/upload/v1784885168/5_1_jgpped.jpg"
                 alt="The Essential Leather Care Kit"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
