@@ -102,28 +102,22 @@ export default function HeroSlider() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
-
     const updateViewport = () => setIsDesktop(mediaQuery.matches);
-
     updateViewport();
     mediaQuery.addEventListener("change", updateViewport);
-
     return () => mediaQuery.removeEventListener("change", updateViewport);
   }, []);
 
   useEffect(() => {
     const updateHeader = () => setIsScrolled(window.scrollY > 30);
-
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
-
     return () => window.removeEventListener("scroll", updateHeader);
   }, []);
 
   const goToSlide = useCallback(
     (nextSlide: number) => {
       if (nextSlide === currentSlide) return;
-
       setLeavingSlide(currentSlide);
       setCurrentSlide(nextSlide);
     },
@@ -132,21 +126,17 @@ export default function HeroSlider() {
 
   useEffect(() => {
     if (leavingSlide === null) return;
-
     const timeout = window.setTimeout(() => {
       setLeavingSlide(null);
     }, TRANSITION_DURATION);
-
     return () => window.clearTimeout(timeout);
   }, [leavingSlide]);
 
   useEffect(() => {
     if (isPaused) return;
-
     const timeout = window.setTimeout(() => {
       goToSlide((currentSlide + 1) % slides.length);
     }, SLIDE_DURATION);
-
     return () => window.clearTimeout(timeout);
   }, [currentSlide, goToSlide, isPaused]);
 
@@ -163,31 +153,20 @@ export default function HeroSlider() {
   return (
     <section
       id="top"
-      className="relative h-[90svh] min-h-[560px] w-full overflow-hidden bg-[#181818] md:h-screen md:min-h-[650px]"
+      className="relative h-[90svh] min-h-[560px] w-full overflow-hidden bg-[#F8F5EF] md:h-screen md:min-h-[650px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
     >
+      {/* Animations – 5% zoom for both desktop & mobile */}
       <style jsx global>{`
         @keyframes tlcc-image-zoom {
           from {
             transform: scale(1);
           }
           to {
-            transform: scale(1.025);
-          }
-        }
-
-        /* Desktop receives a more restrained, premium zoom. */
-        @media (min-width: 768px) {
-          @keyframes tlcc-image-zoom {
-            from {
-              transform: scale(1);
-            }
-            to {
-              transform: scale(1.012);
-            }
+            transform: scale(1.05);
           }
         }
 
@@ -222,14 +201,16 @@ export default function HeroSlider() {
         }
       `}</style>
 
+      {/* ---- HEADER ---- */}
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
           headerIsLight
             ? "border-[#EAE3D8] bg-[#F8F5EF]/95 text-[#181818] shadow-[0_2px_18px_rgba(0,0,0,0.04)] backdrop-blur-md"
-            : "border-white/20 bg-gradient-to-b from-black/35 to-transparent text-white"
+            : "border-transparent bg-gradient-to-b from-[#F8F5EF]/90 to-transparent text-[#181818]"
         }`}
       >
         <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10 lg:px-14">
+          {/* Logo */}
           <a
             href="#top"
             aria-label="The Leather Care Co. home"
@@ -245,6 +226,7 @@ export default function HeroSlider() {
             />
           </a>
 
+          {/* Desktop nav */}
           <nav
             className="hidden items-center gap-7 md:flex"
             aria-label="Primary navigation"
@@ -265,19 +247,15 @@ export default function HeroSlider() {
                 {label}
               </a>
             ))}
-
             <a
               href="https://wa.me/918076959966?text=I'd%20like%20a%20free%20assessment"
-              className={`ml-2 inline-flex h-11 items-center justify-center px-5 text-[10px] font-medium uppercase tracking-[0.16em] transition duration-300 hover:-translate-y-0.5 ${
-                headerIsLight
-                  ? "bg-[#181818] text-white hover:bg-[#B38A4A]"
-                  : "bg-white text-[#181818] hover:bg-[#F8F5EF]"
-              }`}
+              className="ml-2 inline-flex h-11 items-center justify-center bg-[#181818] px-5 text-[10px] font-medium uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B38A4A]"
             >
               Book Now
             </a>
           </nav>
 
+          {/* Mobile menu toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((open) => !open)}
@@ -289,6 +267,7 @@ export default function HeroSlider() {
           </button>
         </div>
 
+        {/* Mobile nav */}
         {mobileMenuOpen && (
           <nav
             id="mobile-navigation"
@@ -312,7 +291,6 @@ export default function HeroSlider() {
                 {label}
               </a>
             ))}
-
             <a
               href="https://wa.me/918076959966?text=I'd%20like%20a%20free%20assessment"
               className="mt-6 flex h-14 items-center justify-center bg-[#181818] px-6 text-[10px] font-medium uppercase tracking-[0.18em] text-white"
@@ -323,6 +301,7 @@ export default function HeroSlider() {
         )}
       </header>
 
+      {/* ---- SLIDES ---- */}
       {isDesktop !== null &&
         visibleSlides.map((slideIndex) => {
           const slide = slides[slideIndex];
@@ -338,8 +317,9 @@ export default function HeroSlider() {
                   : "pointer-events-none z-0 opacity-0"
               }`}
             >
+              {/* Image container – object-contain for full visibility + zoom animation */}
               <div
-                className="absolute inset-0 overflow-hidden"
+                className="absolute inset-0 flex items-center justify-center overflow-hidden"
                 style={
                   isActive
                     ? {
@@ -354,10 +334,11 @@ export default function HeroSlider() {
                   fill
                   priority={slideIndex === 0}
                   sizes="100vw"
-                  className="object-cover object-center"
+                  className="object-contain"
                 />
               </div>
 
+              {/* CTA buttons – visible on both desktop & mobile */}
               {isActive && (
                 <div
                   className="absolute inset-x-4 bottom-16 z-20 flex flex-col gap-2 sm:inset-x-auto sm:left-1/2 sm:flex-row sm:-translate-x-1/2 sm:gap-3 md:bottom-14"
@@ -376,7 +357,7 @@ export default function HeroSlider() {
                   {slide.cta.secondary && (
                     <a
                       href={slide.cta.secondary.href}
-                      className="flex h-14 items-center justify-center border border-white/75 bg-black/10 px-7 text-[10px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-[2px] transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#181818] sm:px-8"
+                      className="flex h-14 items-center justify-center border border-[#181818]/30 bg-transparent px-7 text-[10px] font-medium uppercase tracking-[0.18em] text-[#181818] transition duration-300 hover:-translate-y-0.5 hover:bg-[#181818] hover:text-white sm:px-8"
                     >
                       {slide.cta.secondary.text}
                     </a>
@@ -387,6 +368,7 @@ export default function HeroSlider() {
           );
         })}
 
+      {/* ---- PROGRESS INDICATORS ---- */}
       <div className="absolute inset-x-0 bottom-5 z-30 flex justify-center gap-2 px-5 md:bottom-7 md:justify-end md:px-10 lg:px-14">
         {slides.map((slide, index) => (
           <button
@@ -397,12 +379,11 @@ export default function HeroSlider() {
             aria-label={`Show hero campaign ${index + 1}`}
             aria-current={index === currentSlide ? "true" : undefined}
           >
-            <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white/45" />
-
+            <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-[#181818]/30" />
             {index === currentSlide && (
               <span
                 key={currentSlide}
-                className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white"
+                className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-[#181818]"
                 style={{
                   animation: `tlcc-progress ${SLIDE_DURATION}ms linear forwards`,
                   animationPlayState: isPaused ? "paused" : "running",
