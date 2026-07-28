@@ -245,12 +245,11 @@ export default function Home() {
             <div className="mt-10 grid grid-cols-2 border-t border-[#D9D0C4] pt-8">
               <div className="border-r border-[#D9D0C4] pr-5">
                 <p
-                  className={`${heading} text-4xl text-[#B38A4A] md:text-5xl`}
-                >
-                  20+
-                </p>
-                <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-[#6E6E6E]">
-                  Years of experience
+                 className={`${heading} text-4xl text-[#B38A4A] md:text-5xl`}>
+      50+
+    </p>
+    <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-[#6E6E6E]">
+      Luxury brands restored
                 </p>
               </div>
 
@@ -370,6 +369,33 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="bg-[#F1ECE3] px-5 py-20 text-center md:px-10 md:py-28 lg:px-14">
+  <div className="mx-auto max-w-3xl">
+    <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#B38A4A]">
+      Pre‑Loved Luxury
+    </p>
+
+    <h2 className="mt-5 font-[family-name:var(--font-cormorant)] text-4xl font-medium leading-[1.02] tracking-[-0.04em] text-[#181818] md:text-6xl">
+      Curated vintage and pre‑loved treasures.
+    </h2>
+
+    <p className="mx-auto mt-6 max-w-xl text-[15px] font-light leading-8 text-[#5E5A56]">
+      Discover a carefully selected collection of pre‑owned luxury pieces at{" "}
+      <span className="font-medium text-[#181818]">Confidential Couture</span>.
+      Every item is authenticated, restored, and ready for a new story.
+    </p>
+
+    <a
+      href="https://confidentialcouture.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-8 inline-flex h-14 items-center justify-center bg-[#181818] px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B38A4A]"
+    >
+      Explore the collection &nbsp;&rarr;
+    </a>
+  </div>
+</section>
 
       <section className="px-5 py-20 md:px-10 md:py-[140px] lg:px-14">
         <div className="mx-auto max-w-[1440px]">
@@ -564,7 +590,7 @@ export default function Home() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full bg-[#181818] text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#B38A4A]"
+        className="fixed bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#1EBE56]"
       >
         <svg
           viewBox="0 0 32 32"
