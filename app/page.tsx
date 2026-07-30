@@ -42,6 +42,55 @@ const process = [
   },
 ];
 
+const pricingGroups = [
+  {
+    title: "Clean",
+    description:
+      "Cleaning and conditioning service that covers both interior and exterior.",
+    items: [
+      ["Bags - General cleaning", "₹1,500 - ₹5,000"],
+      ["Bags - Deep cleaning", "TBD"],
+      ["Belt", "₹1,200 - ₹3,000"],
+      ["Wallet", "₹1,500 - ₹3,500"],
+      ["All types of footwear", "₹1,000 - ₹4,000"],
+    ],
+  },
+  {
+    title: "Retouch",
+    description:
+      "Small repair services for bags, accessories, footwear and luggage.",
+    items: [
+      ["Bags", "₹1,100 - ₹4,000"],
+      ["Belt", "₹1,000 - ₹3,000"],
+      ["Wallet", "₹1,200 - ₹3,500"],
+      ["Footwear", "₹1,000 - ₹3,500"],
+      ["Luggage", "₹2,500 - ₹7,500"],
+    ],
+  },
+  {
+    title: "Restore",
+    description:
+      "Heavy restoration for products that require multiple specialist services.",
+    items: [
+      ["Bags", "₹2,500 - ₹8,000"],
+      ["Belt", "₹2,000 - ₹5,000"],
+      ["Wallet", "₹2,500 - ₹6,000"],
+      ["Footwear", "₹2,000 - ₹6,500"],
+    ],
+  },
+  {
+    title: "Recolour",
+    description:
+      "Colour restoration and recolouring for complete leather products.",
+    items: [
+      ["Bags", "₹2,000 - ₹10,000"],
+      ["Belt", "₹1,800 - ₹7,000"],
+      ["Wallet", "₹1,800 - ₹5,500"],
+      ["Footwear", "₹2,000 - ₹7,000"],
+    ],
+  },
+];
+
 const brands = [
   "Louis Vuitton",
   "Hermès",
@@ -101,6 +150,7 @@ const faqs = [
 const footerNavigation = [
   ["Home", "#top"],
   ["Services", "#services"],
+  ["Pricing", "#pricing"],
   ["Restoration", "#restoration"],
   ["Before & After", "#before-after"],
   ["About Us", "#about"],
@@ -221,6 +271,120 @@ export default function Home() {
       </section>
 
       <section
+        id="pricing"
+        className="scroll-mt-20 bg-[#FCFAF8] px-5 py-20 md:px-10 md:py-[140px] lg:px-14"
+      >
+        <div className="mx-auto max-w-[1440px]">
+          <div className="grid gap-8 border-b border-[#EAE3D8] pb-12 md:grid-cols-[0.85fr_1.15fr] md:gap-20 md:pb-16">
+            <p className={eyebrow}>Service pricing</p>
+
+            <div>
+              <h2
+                className={`${heading} max-w-3xl text-4xl leading-[1.02] md:text-6xl`}
+              >
+                Considered care, transparently priced.
+              </h2>
+
+              <p className="mt-6 max-w-xl text-[15px] font-light leading-8 text-[#6E6E6E]">
+                Every item is individually assessed by our specialists. The
+                following ranges provide a helpful guide before your
+                personalised quote.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:mt-16 md:grid-cols-2">
+            {pricingGroups.map((group) => (
+              <article
+                key={group.title}
+                className="border border-[#EAE3D8] bg-white p-7 md:p-10"
+              >
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B38A4A]">
+                  The Leather Care Co.
+                </p>
+
+                <h3
+                  className={`${heading} mt-4 text-4xl leading-none md:text-5xl`}
+                >
+                  {group.title}
+                </h3>
+
+                <p className="mt-4 max-w-md text-sm font-light leading-7 text-[#6E6E6E]">
+                  {group.description}
+                </p>
+
+                <div className="mt-8 border-t border-[#EAE3D8]">
+                  {group.items.map(([service, price]) => (
+                    <div
+                      key={service}
+                      className="flex items-start justify-between gap-5 border-b border-[#EAE3D8] py-4"
+                    >
+                      <span className="text-sm font-light text-[#3E3A36]">
+                        {service}
+                      </span>
+
+                      <span className="shrink-0 text-right text-[11px] font-medium tracking-[0.04em] text-[#181818]">
+                        {price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-5 grid overflow-hidden border border-[#181818] bg-[#181818] text-white md:grid-cols-2">
+            <div className="p-7 md:p-10">
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B38A4A]">
+                Collection & delivery
+              </p>
+
+              <h3 className="mt-4 font-[family-name:var(--font-cormorant)] text-4xl font-medium tracking-[-0.04em]">
+                Across India.
+              </h3>
+
+              <div className="mt-8 space-y-4 border-t border-white/20 pt-6">
+                <div className="flex justify-between gap-4 text-sm">
+                  <span className="text-white/65">Only pickup or drop</span>
+                  <span className="font-medium">₹250</span>
+                </div>
+
+                <div className="flex justify-between gap-4 text-sm">
+                  <span className="text-white/65">Pickup and drop both ways</span>
+                  <span className="font-medium">₹500</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-white/20 bg-[#242424] p-7 md:border-l md:border-t-0 md:p-10">
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B38A4A]">
+                Important notes
+              </p>
+
+              <ul className="mt-5 space-y-3 text-sm font-light leading-6 text-white/65">
+                <li>18% GST is applicable in addition to service prices.</li>
+                <li>TBD pricing is determined after assessment.</li>
+                <li>For more than two services, charges apply separately.</li>
+                <li>Prices may vary according to size, brand and material.</li>
+                <li>In-store self pickup and drop-off are free of charge.</li>
+                <li>Standard cleaning takes approximately 7-8 working days.</li>
+                <li>Final pricing depends on the precise service required.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <a
+              href="https://wa.me/918076959966?text=I'd%20like%20a%20pricing%20assessment%20for%20my%20leather%20item"
+              className={primaryButton}
+            >
+              Request a personalised quote
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="about"
         className="scroll-mt-20 bg-[#F1ECE3] px-5 py-20 md:px-10 md:py-[140px] lg:px-14"
       >
@@ -245,11 +409,12 @@ export default function Home() {
             <div className="mt-10 grid grid-cols-2 border-t border-[#D9D0C4] pt-8">
               <div className="border-r border-[#D9D0C4] pr-5">
                 <p
-                 className={`${heading} text-4xl text-[#B38A4A] md:text-5xl`}>
-      50+
-    </p>
-    <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-[#6E6E6E]">
-      Luxury brands restored
+                  className={`${heading} text-4xl text-[#B38A4A] md:text-5xl`}
+                >
+                  50+
+                </p>
+                <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-[#6E6E6E]">
+                  Luxury brands restored
                 </p>
               </div>
 
@@ -371,31 +536,29 @@ export default function Home() {
       </section>
 
       <section className="bg-[#F1ECE3] px-5 py-20 text-center md:px-10 md:py-28 lg:px-14">
-  <div className="mx-auto max-w-3xl">
-    <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#B38A4A]">
-      Pre‑Loved Luxury
-    </p>
+        <div className="mx-auto max-w-3xl">
+          <p className={eyebrow}>Pre-loved luxury</p>
 
-    <h2 className="mt-5 font-[family-name:var(--font-cormorant)] text-4xl font-medium leading-[1.02] tracking-[-0.04em] text-[#181818] md:text-6xl">
-      Curated vintage and pre‑loved treasures.
-    </h2>
+          <h2 className={`${heading} mt-5 text-4xl leading-[1.02] md:text-6xl`}>
+            Curated vintage and pre-loved treasures.
+          </h2>
 
-    <p className="mx-auto mt-6 max-w-xl text-[15px] font-light leading-8 text-[#5E5A56]">
-      Discover a carefully selected collection of pre‑owned luxury pieces at{" "}
-      <span className="font-medium text-[#181818]">Confidential Couture</span>.
-      Every item is authenticated, restored, and ready for a new story.
-    </p>
+          <p className="mx-auto mt-6 max-w-xl text-[15px] font-light leading-8 text-[#5E5A56]">
+            Discover a carefully selected collection of pre-owned luxury pieces
+            at <span className="font-medium text-[#181818]">Confidential Couture</span>.
+            Every item is authenticated, restored, and ready for a new story.
+          </p>
 
-    <a
-      href="https://confidentialcouture.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mt-8 inline-flex h-14 items-center justify-center bg-[#181818] px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B38A4A]"
-    >
-      Explore the collection &nbsp;&rarr;
-    </a>
-  </div>
-</section>
+          <a
+            href="https://confidentialcouture.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex h-14 items-center justify-center bg-[#181818] px-8 text-[10px] font-medium uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B38A4A]"
+          >
+            Explore the collection →
+          </a>
+        </div>
+      </section>
 
       <section className="px-5 py-20 md:px-10 md:py-[140px] lg:px-14">
         <div className="mx-auto max-w-[1440px]">
@@ -536,10 +699,7 @@ export default function Home() {
               </p>
 
               <div className="mt-4 space-y-2 text-sm">
-                <a
-                  href="tel:+918076959966"
-                  className="block transition hover:text-white"
-                >
+                <a href="tel:+918076959966" className="block transition hover:text-white">
                   +91 80769 59966
                 </a>
                 <a
